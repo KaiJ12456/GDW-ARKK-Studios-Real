@@ -34,13 +34,13 @@ int main()
             }
 
         }
-        else if (menuNum == "2") { //rules
+        else if (menuNum == "3") { //rules
 
             rules();
             menuNum = mainMenu();
 
         }
-        else if (menuNum == "3") {
+        else if (menuNum == "2") {
 
             infoPage();
             menuNum = mainMenu();
@@ -83,8 +83,8 @@ string mainMenu()
         std::cout << ascGame << endl;
         std::cout << "                                             Input a number to begin: " << endl << endl;
         std::cout << "                                                    1. Start" << endl
-            << "                                                    2. Rules" << endl
-            << "                                                    3. About" << endl
+            << "                                                    2. About" << endl
+            << "                                                    3. Rules" << endl
             << "                                                    4. Quit" << endl << endl
             << "                                                       ";
         cin >> menuOp;
