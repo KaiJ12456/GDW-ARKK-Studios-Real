@@ -11,6 +11,7 @@ string mainMenu(); //Main Menu Function
 string rules(); //Rules Function
 string infoPage(); //About Page Function
 string mapSelect(); //Map Selection Function
+void unitStats(); //Initialize Unit Stats
 
 int main()
 {
@@ -247,6 +248,32 @@ string mapSelect()
     }
 
     return mapNum;
+}
+
+void unitStats()
+{
+    string userInput;
+    int placeHold[4];
+
+    //Unit {current health, max health, strength, speed, range}
+    int bS[] = { 10, 10, 5, 4, 1 };
+    int bs[] = { 10, 10, 5, 4, 1 };
+    int bH[] = { 13, 13, 4, 3, 1 };
+    int bh[] = { 13, 13, 4, 3, 1 };
+    int bA[] = { 8, 8, 3, 5, 2 };
+    int ba[] = { 8, 8, 3, 5, 2 };
+    int bK[] = { 14, 14, 5, 2, 1 };
+
+    int rS[] = { 10, 10, 5, 4, 1 };
+    int rs[] = { 10, 10, 5, 4, 1 };
+    int rH[] = { 13, 13, 4, 3, 1 };
+    int rh[] = { 13, 13, 4, 3, 1 };
+    int rA[] = { 8, 8, 3, 5, 2 };
+    int ra[] = { 8, 8, 3, 5, 2 };
+    int rK[] = { 14, 14, 5, 2, 1 };
+
+    cin >> userInput;
+
 }
 
 
