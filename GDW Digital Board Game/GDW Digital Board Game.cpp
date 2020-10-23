@@ -12,6 +12,7 @@ string rules(); //Rules Function
 string infoPage(); //About Page Function
 string mapSelect(); //Map Selection Function
 void unitStats(); //Initialize Unit Stats
+void stat(string, string, int[5]);
 
 int main()
 {
@@ -49,7 +50,8 @@ int main()
         }
         else { //quit
 
-            return EXIT_SUCCESS;
+            //return EXIT_SUCCESS;
+            exit(1);
 
         }
 
@@ -88,7 +90,7 @@ string mainMenu()
             << "                                                    3. Rules" << endl
             << "                                                    4. Quit" << endl << endl
             << "                                                       ";
-        cin >> menuOp;
+        std::cin >> menuOp;
 
         if (menuOp == "1" || menuOp == "2" || menuOp == "3" || menuOp == "4") {
             loopMenu = false;
@@ -159,7 +161,7 @@ string rules()
             << "          - Denoted as 'X' on map" << endl << endl;
 
         std::cout << "    ";
-        cin >> return2Menu;
+        std::cin >> return2Menu;
         system("CLS");
 
     }
@@ -196,7 +198,7 @@ string infoPage()
             << "      -  Suraaj Gill (100783848)" << endl;
 
         std::cout << endl << "    ";
-        cin >> return2Menu;
+        std::cin >> return2Menu;
         system("CLS");
     }
     return return2Menu;
@@ -234,7 +236,7 @@ string mapSelect()
         //print map 3 array
 
         std::cout << "      ";
-        cin >> mapNum;
+        std::cin >> mapNum;
 
         if (mapNum == "1" || mapNum == "2" || mapNum == "3") {
             loopMapSelect = false;
@@ -272,8 +274,18 @@ void unitStats()
     int ra[] = { 8, 8, 3, 5, 2 };
     int rK[] = { 14, 14, 5, 2, 1 };
 
-    cin >> userInput;
+    std::cin >> userInput;
 
+}
+
+void stat(string unitName, string team, int unit[5])
+{
+    std::cout << "Unit: " << unitName << endl;
+    std::cout << "Team: " << team << endl;
+    std::cout << "Health: " << unit[0] << "/" << unit[1];
+    std::cout << "Strength: " << unit[2];
+    std::cout << "Speed: " << unit[3];
+    std::cout << "Range: " << unit[4];
 }
 
 
