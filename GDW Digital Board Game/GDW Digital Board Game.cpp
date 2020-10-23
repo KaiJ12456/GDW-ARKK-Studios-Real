@@ -13,12 +13,15 @@ string infoPage(); //About Page Function
 string mapSelect(); //Map Selection Function
 void unitStats(); //Initialize Unit Stats
 void stat(string, string, int[5]);
+string winBlue(); //Win Screen for Blue Team
+string winRed();
 
 int main()
 {
     
     string menuNum = mainMenu(); 
     bool loopMenu = true;
+    string replayNum = "1";
 
     while (loopMenu) {
 
@@ -35,6 +38,22 @@ int main()
                 std::cout << "map 3" << endl;
             }
 
+            /*
+            
+            INSERT GAMEPLAY HERE FOR TURNS (or gameplay function)
+
+            */
+
+            replayNum = winBlue(); //show win screen depending on who wins
+            replayNum = winRed();
+
+            //if Replay is 1, repeat loop for gameplay with reset numbers
+            //if replayNum is 2, go back to main menu (exit loop)
+
+            if (replayNum == "3") { //exit game
+                exit(1);
+            }
+
         }
         else if (menuNum == "3") { //rules
 
@@ -42,7 +61,7 @@ int main()
             menuNum = mainMenu();
 
         }
-        else if (menuNum == "2") {
+        else if (menuNum == "2") { //about page
 
             infoPage();
             menuNum = mainMenu();
@@ -288,4 +307,88 @@ void stat(string unitName, string team, int unit[5])
     std::cout << "Range: " << unit[4];
 }
 
+string winBlue()
+{
+    string winOp;
+    bool loopReplay = true;
 
+    string victorBlue = R"(
+
+                    ____  __              ______                                                       
+                   / __ )/ /_  _____     /_  __/__  ____ _____ ___                                     
+                  / __  / / / / / _ \     / / / _ \/ __ `/ __ `__ \                                    
+                 / /_/ / / /_/ /  __/    / / /  __/ /_/ / / / / / /                                    
+                /_____/_/\__,_/\___/    /_/  \___/\__,_/_/ /_/_/_/    __             _                 
+                      / __ \___  (_)___ _____  _____   | |  / (_)____/ /_____  _____(_)___  __  _______
+                     / /_/ / _ \/ / __ `/ __ \/ ___/   | | / / / ___/ __/ __ \/ ___/ / __ \/ / / / ___/
+                    / _, _/  __/ / /_/ / / / (__  )    | |/ / / /__/ /_/ /_/ / /  / / /_/ / /_/ (__  ) 
+                   /_/ |_|\___/_/\__, /_/ /_/____/     |___/_/\___/\__/\____/_/  /_/\____/\__,_/____/  
+                                /____/                                                                 
+
+
+
+)";
+
+    while (loopReplay) {
+
+        std::cout << victorBlue;
+        std::cout << "                                        Thanks for playing! Enter a number:" << endl << endl
+            << "                                           1. Replay with Same Settings" << endl
+            << "                                           2. Return to Main Menu" << endl
+            << "                                           3. Quit" << endl << endl
+            << "                                                       ";
+
+        std::cin >> winOp;
+        system("CLS");
+
+        if (winOp == "1" || winOp == "2" || winOp == "3") {
+            loopReplay = false;
+        }
+
+    }
+
+    return winOp;
+}
+
+string winRed()
+{
+    string winOp;
+    bool loopReplay = true;
+
+    string victorBlue = R"(
+
+                    ____           __   ______                                                         
+                   / __ \___  ____/ /  /_  __/__  ____ _____ ___                                       
+                  / /_/ / _ \/ __  /    / / / _ \/ __ `/ __ `__ \                                      
+                 / _, _/  __/ /_/ /    / / /  __/ /_/ / / / / / /                                      
+                /_/ |_|\___/\__,_/_   /_/  \___/\__,_/_/_/_/ /_/      __             _                 
+                      / __ \___  (_)___ _____  _____   | |  / (_)____/ /_____  _____(_)___  __  _______
+                     / /_/ / _ \/ / __ `/ __ \/ ___/   | | / / / ___/ __/ __ \/ ___/ / __ \/ / / / ___/
+                    / _, _/  __/ / /_/ / / / (__  )    | |/ / / /__/ /_/ /_/ / /  / / /_/ / /_/ (__  ) 
+                   /_/ |_|\___/_/\__, /_/ /_/____/     |___/_/\___/\__/\____/_/  /_/\____/\__,_/____/  
+                                /____/                                                                 
+                                                        
+
+
+)";
+
+    while (loopReplay) {
+
+        std::cout << victorBlue;
+        std::cout << "                                        Thanks for playing! Enter a number:" << endl << endl
+            << "                                           1. Replay with Same Settings" << endl
+            << "                                           2. Return to Main Menu" << endl
+            << "                                           3. Quit" << endl << endl
+            << "                                                       ";
+
+        std::cin >> winOp;
+        system("CLS");
+
+        if (winOp == "1" || winOp == "2" || winOp == "3") {
+            loopReplay = false;
+        }
+
+    }
+
+    return winOp;
+}
