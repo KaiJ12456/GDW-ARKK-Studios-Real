@@ -56,17 +56,17 @@ int HelpMenu(string& help) {
     // This is where the user is prompted with a message asking them to type help to use the menu
     while (MenuLoop == true) {
 
-        cout << "Type help to accsess the help menu\n";
+        cout << "Type help to access the help menu\n";
         cin >> help;
 
         if (help == "help" || help == "Help") {
             system("CLS");
             cout << "What do you need help with?\n";
-            cout << "Please enter a number\n";
-            cout << "1. rules\n";
+            cout << "Input a number: \n";
+            cout << "1. Rules\n";
             cout << "2. How to move units\n";
             cout << "3. How to attack with units\n";
-            cout << "4. unit statistics\n";
+            cout << "4. Unit statistics\n";
             cin >> pick;
 
             if (pick == 1 || pick == 2 || pick == 3 || pick == 4) {
@@ -107,7 +107,7 @@ int HelpMenu(string& help) {
 
         cout << "10. Archer units cannot shoot through/over mountains.\n\n";
         cout << "------------------------------------------------------------------------------------------------------\n\n";
-        cout << "To return to the help menu type 1\n";
+        cout << "To return to the help menu, type '1'.\n";
         cin >> goback;
         system("CLS");
     }
@@ -121,17 +121,17 @@ int HelpMenu(string& help) {
  int goback = 0;
 
     while (goback != 1) {
-        cout << "- In order to move Units around the board follow this format:\n\n";
+        cout << "- To move units around the board, follow this format:\n\n";
 
         cout << "move (unit tile) (R,L,U,D) (R,L,U,D) (R,L,U,D)\n";
         cout << "Example: move C3 L L D\n\n";
-        cout << "- ^ Above example is based off the speed stat of a Heavy Armor Unit.\n";
-        cout << "This will make the unit at C3 move left once, left agian, then down once\n\n";
+        cout << "- ^ The above example is based off the speed stat of a Heavy Armour unit.\n";
+        cout << "This will make the unit at C3 move left once, left again, then down once.\n\n";
         cout << "------------------------------------------------------------------------------------------------------\n\n";
-        cout << "- The amount of adjacent tiles you can input depends on the speed stat of the character your moving.\n";
-        cout << "For more information on unit statistics refer to the statistics section of the help menu.\n\n";
+        cout << "- The number of adjacent tiles you can input depends on the speed stat of the unit you move.\n";
+        cout << "For more information on unit statistics, refer to the statistics section of the help menu.\n\n";
         cout << "------------------------------------------------------------------------------------------------------\n\n";
-        cout << "- To return to the help menu type 1\n\n";
+        cout << "- To return to the help menu, type '1'.\n\n";
 
         cin >> goback;
         system("CLS");
@@ -145,15 +145,15 @@ int HelpMenu(string& help) {
         int goback = 0;
 
         while (goback != 1) {
-            cout << "- To make Units attack follow the format below.\n";
-            cout << "attack (Unit attacking's tile) (Unit you wish to attack's tile)\n\n";
+            cout << "- To make units attack, follow the format below:\n";
+            cout << "attack (Unit's tile) (Attacked unit's tile)\n\n";
 
             cout << "- Units with a range stat of 1 must be adjacent to an enemy unit they wish to attack.\n";
             cout << "Units with a range stat of 2 can be 1 or 2 tiles from an enemy unit they wish to attack.\n\n";
             cout << "------------------------------------------------------------------------------------------------------\n\n";
-            cout << "- For more information on unit statistics refer to the statistics section of the help menu.\n\n";
+            cout << "- For more information on unit statistics, refer to the statistics section of the help menu.\n\n";
             cout << "------------------------------------------------------------------------------------------------------\n\n";
-            cout << "- To return to the help menu type 1.\n";
+            cout << "- To return to the help menu, type '1'.\n";
             cin >> goback;
             system("CLS");
         }
@@ -168,22 +168,22 @@ int HelpMenu(string& help) {
             cout << "Swordsman stats are:\n";
             cout << "Health: 10, Strength: 5, Speed: 4, Range: 1\n\n";
             cout << "------------------------------------------------------------------------------------------------------\n\n";
-            cout << "Heavy Armor stats are:\n";
+            cout << "Heavy Armour stats are:\n";
             cout << "Health: 13, Strength: 4, Speed: 3, Range: 1\n\n";
             cout << "------------------------------------------------------------------------------------------------------\n\n";
             cout << "Archer stats are:\n";
             cout << "Health: 8, Strength: 3, Speed: 5, Range: 2\n\n";
             cout << "------------------------------------------------------------------------------------------------------\n\n";
-            cout << "King Stats are:\n";
+            cout << "King stats are:\n";
             cout << "Health: 14, Strength: 5, Speed: 2, Range: 1\n\n";
             cout << "------------------------------------------------------------------------------------------------------\n\n";
 
-            cout << "To see the stats of a specific unit on the board use this format:\n";
+            cout << "To see the stats of a specific unit on the board, use this format:\n";
             cout << "stats (unit's tile)\n\n";
             cout << "------------------------------------------------------------------------------------------------------\n\n";
 
 
-            cout << "To return to the help menu type 1\n";
+            cout << "To return to the help menu, type '1'.\n";
             cin >> goback;
             system("CLS");
         }

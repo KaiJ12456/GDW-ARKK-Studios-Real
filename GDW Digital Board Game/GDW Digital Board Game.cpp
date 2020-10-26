@@ -2,6 +2,7 @@
 Besiege of Power
 ARKK Studios
 Version 1.0
+Anthony Karas (100784819), Ryan Yee (100785620), Kai Joseph (100783670), Kyra Trinidad (100784182), Suraaj Gill (100783848)
 */
 
 #include <iostream>
@@ -14,7 +15,7 @@ string mapSelect(); //Map Selection Function
 void unitStats(); //Initialize Unit Stats
 void stat(string, string, int[5]);
 string winBlue(); //Win Screen for Blue Team
-string winRed();
+string winRed(); //Win Screen for Red Team
 
 int main()
 {
@@ -147,17 +148,17 @@ string rules()
             << "    4. Players alternate turns, moving and potentially attacking with 3 units maximum. Players don't need to use the" << endl
             << "       unit's full movement nor need to move all 3 units." << endl
             << "    5. Units can move and then attack. Attacking doesn't use up movement. Units can also attack without moving. Once" << endl
-            << "       you attack, you cannot move" << endl
+            << "       you attack, you cannot move." << endl
             << "    6. Units on the same team can move through each other, but they cannot pass through enemy units. Units can't rest" << endl
-            << "       on the same tile" << endl << endl;
+            << "       on the same tile." << endl << endl;
 
         std::cout << "    U N I T S  -----------------------------------------------------------------------------------------------------" << endl << endl
             << "    Units have 4 stats: " << endl
             << "    -  Health: Health determines how much health units have. If it is lower or equal to 0, the unit is defeated." << endl
             << "    -  Strength: Strength is how much damage a unit does when it attacks. The health of the attacked unit is lowered" << endl
             << "                 by the strength of the attacking unit." << endl
-            << "    - Speed: Speed refers to how many tiles the unit can move" << endl
-            << "    - Range: Range is how far units can attack enemies (1 = adjacent tiles, 2 = 2 tiles away in linear fashion)" << endl << endl;
+            << "    - Speed: Speed refers to how many tiles the unit can move." << endl
+            << "    - Range: Range is how far units can attack enemies (1 = adjacent tiles, 2 = 1 or 2 tiles away in linear fashion)" << endl << endl;
         std::cout << "    The 4 units, their ingame symbols, and their stats are as follows: " << endl
             << "    - Swordsman" << endl
             << "          - S = swordsman 1, s = swordsman 2" << endl
@@ -174,11 +175,30 @@ string rules()
         std::cout << "    T E R R A I N  -------------------------------------------------------------------------------------------------" << endl << endl
             << "    - Ground: No status effects" << endl
             << "    - Forest: Lose 1 speed point when starting on forest tile or once a unit passes through a forest tile on its turn" << endl
-            << "          - If a forest is the last tile for a unit's last speed point, the unit can cross into the forest." << endl
+            << "          - If a forest is the last tile for a unit's last speed point, the unit can cross into the forest" << endl
             << "    - Mountain: Intraversible tile" << endl
             << "          - Archers cannot shoot over mountains" << endl
             << "          - Denoted as 'X' on map" << endl << endl;
+        std::cout << "    I N G A M E    C O M M A N D S  --------------------------------------------------------------------------------" << endl << endl
+            << "    help" << endl
+            << "    - Will list all available commands " << endl
+            << "    - Can be used at any point during player's turn in game" << endl << endl
+            << "    move (unit's tile) (R,L,U,D) (R,L,U,D) (R,L,U,D) ..." << endl
+            << "    - To move a unit, you must type the move command, followed by the tile the unit is on, followed by its directions" << endl 
+            << "    - Example: move C3 R R D" << endl
+            << "          - A Heavy Armour with 3 speed will move 2 tiles right and 1 tile down" << endl
+            << "    - The number of directions listed after the unit's current tile coordinate is based on the unit's speed stat" << endl << endl
+            << "    attack (unit's tile) (attacked unit's tile)" << endl
+            << "    - The above command will use the selected unit to attack an enemy unit" << endl
+            << "    - Units can attack after they move or after having not moved at all" << endl
+            << "    - Example: attack B3 C3" << endl
+            << "          - The unit on B3 will attack the unit on C3" << endl << endl
+            << "    stats (unit's tile)" << endl
+            << "    - Will print out unit name, team colour, current health, and base stats" << endl
+            << "    - Example: stats D4" << endl
+            << "          - The unit on D4 will have its stats printed to the console" << endl << endl;
 
+        std::cout << "    [SCROLL UP TO SEE RULES]" << endl << endl;
         std::cout << "    ";
         std::cin >> return2Menu;
         system("CLS");
@@ -191,6 +211,7 @@ string rules()
 
 string infoPage()
 {
+
     string return2Menu;
     string ascAbout = R"(
         ___    __                __ 
@@ -206,7 +227,7 @@ string infoPage()
 
         std::cout << ascAbout;
         std::cout << "Besiege of Power is a turn-based strategy game of outwitting your opponent. It redefines the game of chess," << endl
-            << "    allowing tacticians to deploy their units to attack, defend, and conquer the map. Play methodically to claim" << endl
+            << "    allowing commanders to deploy their units to attack, defend, and conquer the map. Play methodically to claim" << endl
             << "    your opponent's king. Along the way, navigate through forests and mountains to defeat the enemy's forces. Suit" << endl
             << "    up, form a battle plan, and adapt to emerge victorious in Besiege of Power! " << endl << endl
             << "    Besiege of Power was developed by the following team of 5 dedicated students at ARKK Studios:" << endl
