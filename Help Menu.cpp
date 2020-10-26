@@ -105,8 +105,8 @@ int HelpMenu(string& help) {
 
         cout << "9. Units cannot occupy the same tile. or move through each other\n\n";
 
-        cout << "10. Archer units cannot shoot through/over mountains.\n\n";
         cout << "------------------------------------------------------------------------------------------------------\n\n";
+
         cout << "To return to the help menu, type '1'.\n";
         cin >> goback;
         system("CLS");
