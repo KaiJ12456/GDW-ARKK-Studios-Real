@@ -97,13 +97,13 @@ int HelpMenu(string& help) {
 
         cout << "5. Each unit starts in a predetermined location on the map depending on the map variant.\n\n";
 
-        cout << "6. Movement: Players alternate turns to move and then attack with 3 units maximum.\n  The number of tiles each unit moves is dependent on its speed statistic.\n\n";
+        cout << "6. Movement: Players alternate turns to move and then attack with 1 unit each turn.\n  The number of tiles each unit moves is dependent on its speed statistic.\n\n";
 
-        cout << "7. When moving units, players do not need to use the unit’s full movement,\n  and players can move or attack with 3 or less units per turn.\n\n";
+        cout << "7. When moving units, players do not need to use the unit’s full movement,\n  and players can move or attack with 1 unit per turn.\n\n";
 
         cout << "8. Units move and then can attack. Attacking does not use up movement.\n  Units can also attack without moving. However, once you attack, you cannot move.\n\n";
 
-        cout << "9. Units on the same team can move through each other, but they cannot pass through enemy units.\n  Units cannot occupy the same tile.\n\n";
+        cout << "9. Units cannot occupy the same tile. or move through each other\n\n";
 
         cout << "10. Archer units cannot shoot through/over mountains.\n\n";
         cout << "------------------------------------------------------------------------------------------------------\n\n";
